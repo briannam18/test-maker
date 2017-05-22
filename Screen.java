@@ -129,8 +129,4 @@ public class Screen extends JFrame{
 	public static void main(String [] args){
 		Screen screen = new Screen();
 	}
-	public static void print0()
-	{
-		System.out.println("0");
-	}
 }
