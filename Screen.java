@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -23,6 +25,7 @@ public class Screen extends JFrame{
 	JPanel menu;
 	JComboBox [] boxes = new JComboBox[3];
 	JTextArea text;
+	Color bgColor = Color.decode("#44C5F4");
 	
 	private String [] questionChoices = {"Multiple Choice", "Fill in the Blank", "Objective Based"};
 	private String [] difficulties = {"1","2","3","4","5"};
@@ -36,33 +39,36 @@ public class Screen extends JFrame{
 		this.setSize((int)tool.getScreenSize().getWidth(),(int)tool.getScreenSize().getHeight());
         setLocationRelativeTo(null);
         setResizable(true);
-        
+        setVisible(true);
 
         initiate();
-        
-        setVisible(true);
         
 	}
 	
 	public void initiate(){
 		menu = new JPanel();
         menu.setLayout(new BorderLayout());
-        menu.setBackground(Color.gray);
-        
-        JLabel welcome = new JLabel("Welcome");
-        welcome.setHorizontalAlignment(JLabel.CENTER);
-        welcome.setForeground(Color.white);
-        welcome.setFont(new Font("Bell MT", Font.BOLD, 48));
-        menu.add(welcome, BorderLayout.NORTH);
+        menu.setBackground(bgColor);
         
         JPanel west = new JPanel(new GridLayout(10,1));
-        west.setPreferredSize(new Dimension(getWidth()/4,400));
-        west.setBackground(Color.gray);
+        west.setPreferredSize(new Dimension(getWidth()/2,400));
+        west.setBackground(bgColor);
+        
+        JPanel north = new JPanel();
+        north.setBackground(Color.decode("#3493E5"));
         
         JPanel east = new JPanel();
-        east.setPreferredSize(new Dimension(((3*getWidth())/4)-50, getHeight()));
-        east.setBackground(Color.gray);
+        east.setPreferredSize(new Dimension((getWidth())/2, getHeight()));
+        east.setBackground(bgColor);
         
+        
+        // Add welcome to north panel
+        JLabel welcome = new JLabel("Welcome");
+        welcome.setHorizontalAlignment(JLabel.CENTER);
+        welcome.setForeground(Color.black);
+        welcome.setFont(new Font("Bell MT", Font.BOLD, 48));
+        north.add(welcome);
+
         
         // Set West Panel
         JButton add = new JButton("Add");
@@ -95,17 +101,22 @@ public class Screen extends JFrame{
         
 		// Set East Panel
 		text = new JTextArea();
+		text.setFont(text.getFont().deriveFont(15f));
 		JScrollPane scrollPane = new JScrollPane(text);
 		scrollPane.setPreferredSize(new Dimension(300,getHeight()-200));
 		
+		east.setBorder(BorderFactory.createEmptyBorder(getHeight()/10, 0, getHeight()/10, 0));
+		west.setBorder(BorderFactory.createEmptyBorder(getHeight()/10, getWidth()/6, getHeight()/10, getWidth()/6));
 		
 		east.add(scrollPane);
 		
 		
 		menu.add(east, BorderLayout.EAST);
 		menu.add(west, BorderLayout.WEST);
+		menu.add(north, BorderLayout.NORTH);
 		
         add(menu);
+        
 	}
 	
 	public void addButtonPressed(){
