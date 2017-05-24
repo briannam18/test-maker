@@ -39,10 +39,10 @@ public class Screen extends JFrame{
 		this.setSize((int)tool.getScreenSize().getWidth(),(int)tool.getScreenSize().getHeight());
         setLocationRelativeTo(null);
         setResizable(true);
-        setVisible(true);
+        
 
         initiate();
-        
+        setVisible(true);
 	}
 	
 	public void initiate(){
@@ -51,14 +51,14 @@ public class Screen extends JFrame{
         menu.setBackground(bgColor);
         
         JPanel west = new JPanel(new GridLayout(10,1));
-        west.setPreferredSize(new Dimension(getWidth()/2,400));
+        west.setPreferredSize(new Dimension(getWidth()/5,200));
         west.setBackground(bgColor);
         
         JPanel north = new JPanel();
         north.setBackground(Color.decode("#3493E5"));
         
         JPanel east = new JPanel();
-        east.setPreferredSize(new Dimension((getWidth())/2, getHeight()));
+        east.setPreferredSize(new Dimension(4*(getWidth())/5, getHeight()));
         east.setBackground(bgColor);
         
         
@@ -72,7 +72,7 @@ public class Screen extends JFrame{
         
         // Set West Panel
         JButton add = new JButton("Add");
-        add.setPreferredSize(new Dimension(150,150));
+        add.setPreferredSize(new Dimension(80,80));
         add.addActionListener(new ActionListener() { 
         	  public void actionPerformed(ActionEvent e) { 
         	    addButtonPressed();
@@ -103,10 +103,10 @@ public class Screen extends JFrame{
 		text = new JTextArea();
 		text.setFont(text.getFont().deriveFont(15f));
 		JScrollPane scrollPane = new JScrollPane(text);
-		scrollPane.setPreferredSize(new Dimension(300,getHeight()-200));
+		scrollPane.setPreferredSize(new Dimension(1000,getHeight()-200));
 		
-		east.setBorder(BorderFactory.createEmptyBorder(getHeight()/10, 0, getHeight()/10, 0));
-		west.setBorder(BorderFactory.createEmptyBorder(getHeight()/10, getWidth()/6, getHeight()/10, getWidth()/6));
+		east.setBorder(BorderFactory.createEmptyBorder(getHeight()/20, 0, getHeight()/10, getWidth()/20));
+		west.setBorder(BorderFactory.createEmptyBorder(getHeight()/20, getWidth()/20, getHeight()/10, getWidth()/20));
 		
 		east.add(scrollPane);
 		
