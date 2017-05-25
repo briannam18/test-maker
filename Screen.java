@@ -63,7 +63,7 @@ public class Screen extends JFrame{
         
         
         // Add welcome to north panel
-        JLabel welcome = new JLabel("Welcome");
+        JLabel welcome = new JLabel("Education Innovators");
         welcome.setHorizontalAlignment(JLabel.CENTER);
         welcome.setForeground(Color.black);
         welcome.setFont(new Font("Bell MT", Font.BOLD, 48));
