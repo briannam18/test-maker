@@ -1,0 +1,17 @@
+
+/**
+ * Write a description of class QuestionBank here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+import java.util.ArrayList;
+public class QuestionBank
+{
+    public ArrayList<Question> qBank;
+    public QuestionBank()
+    {
+        qBank = new ArrayList<Question>();
+        qBank.add(new MultipleChoice("Suppose m is a two-dimensional array of a size 4 by 4, with all its elements initialized to zeros. What will be the values stored in m after fill (m) is called? The method fill is defined as follows:\n    Public void fill(int[][] m)\n        { \n           int n = m.length;\n          for (int i = 1; i < n - 1; i++)\n            {\n              For (int j = 1; j < n - 1; j++)\n            M[i][j] = 1;\n            }\n}",1,2,0,new String[]{"0000\n0000\n0000\n0000", "1100\n1100\n0000\n0000","0000\n0110\n0110\n0000","1110\n1110\n1110\n0000","1111\n1111\n1111\n1111"}, "C"));
+    }
+}
