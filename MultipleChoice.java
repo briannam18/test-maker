@@ -38,4 +38,8 @@ class MultipleChoice extends Question
         return super.toString() + "/n" + output;
     }
         */
+    public String getAnswer()
+    {
+        return correctAnswer;
+    }
 }
