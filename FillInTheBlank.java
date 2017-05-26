@@ -21,4 +21,8 @@ class FillInTheBlank extends Question
     {
         return correctAnswer + super.toString();
     }
+    public String getAnswer()
+    {
+        return correctAnswer;
+    }
 }
