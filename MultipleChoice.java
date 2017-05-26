@@ -10,9 +10,9 @@
 class MultipleChoice extends Question
 {
     private String [] possibleAnswers;
-    private String [] correctAnswer;
+    private String correctAnswer;
     
-    public MultipleChoice(String qT,int p, int d, int aS, String [] pA, String [] cA) 
+    public MultipleChoice(String qT,int p, int d, int aS, String [] pA, String cA) 
     {
         super(qT, p, d, aS);
         possibleAnswers = pA;
@@ -25,10 +25,11 @@ class MultipleChoice extends Question
         for(String s: possibleAnswers)
             output += s + "\n";
         
-        return super.toString() + "\n" + output;
+        return super.toString() + "/n" + output;
     }
     
-    public String answerKey()
+    //Not using this
+   /* public String answerKey()
      {
         String output = "";
         for(String s: correctAnswer)
@@ -36,5 +37,5 @@ class MultipleChoice extends Question
         
         return super.toString() + "/n" + output;
     }
-        
+        */
 }
