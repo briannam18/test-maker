@@ -21,5 +21,10 @@ class ObjectiveQuestion extends Question
     {
         return super.toString() + correctAnswer;
     }
+    
+    public String getAnswer()
+    {
+        return correctAnswer;
+    }
 }
 
