@@ -11,6 +11,7 @@ class MultipleChoice extends Question
 {
     private String [] possibleAnswers;
     private String correctAnswer;
+    private String questionText;
     
     public MultipleChoice(String qT,int p, int d, int aS, String [] pA, String cA) 
     {
@@ -21,11 +22,10 @@ class MultipleChoice extends Question
      
     public String getQuestionText()
     {
-        String output = "";
-        for(String s: possibleAnswers)
-            output += s + "\n";
+        String output = "A) " + possibleAnswers[0] + "\n\n" + "B) " + possibleAnswers[1] + "\n\n" + "C) " + possibleAnswers[2] + "\n\n" + "D) " + possibleAnswers[3] + "\n\n" + "E) " + possibleAnswers[4] + "\n\n";
         
-        return super.toString() + "/n" + output;
+        return super.toString() + "\n\n" + output;
+
     }
     
     //Not using this
