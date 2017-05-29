@@ -19,14 +19,14 @@ public class Question {
    private String questionText;
    private int points;
    private int difficulty;
-   private int answerSpace;
+   private int questionType;
    
    //constructor for Question
-   public Question(String qT,int p, int d, int aS) 
+   public Question(String qT,int p, int d, int T) 
    {
        questionText = qT;
        points = p;
-       answerSpace = aS;
+       questionType = T;
        //checking for difficulty range
        if(d<MIN_DIFFICULTY||d>MAX_DIFFICULTY)
        {
@@ -50,9 +50,9 @@ public class Question {
        this.points = points;
    }
    
-   public int getAnswerSpace()
+   public int getQuestionType()
    {
-       return answerSpace;
+       return questionType;
    }
    
    public int getPoints()
@@ -66,4 +66,3 @@ public class Question {
        
    }
 }
-
