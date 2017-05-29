@@ -105,8 +105,8 @@ public class Screen extends JFrame{
 		JScrollPane scrollPane = new JScrollPane(text);
 		scrollPane.setPreferredSize(new Dimension(getWidth()*7/10,getHeight()-200));
 		
-		east.setBorder(BorderFactory.createEmptyBorder(getHeight()/20, 0, getHeight()/20, getWidth()/5));
-		west.setBorder(BorderFactory.createEmptyBorder(getHeight()/10, getWidth()/20, getHeight()/10, getWidth()/20));
+		east.setBorder(BorderFactory.createEmptyBorder(getHeight()/20, 0, getHeight()/10, getWidth()/20));
+		west.setBorder(BorderFactory.createEmptyBorder(getHeight()/20, getWidth()/20, getHeight()/10, getWidth()/20));
 		
 		east.add(scrollPane);
 		
